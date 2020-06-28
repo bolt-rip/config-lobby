@@ -6,7 +6,6 @@ bukkit:
     connection-throttle: -1
     # Changed from 'Server stopped'
     shutdown-message: Server restarting
-    world-container: './world'
   chunk-gc:
     # Disable garbage collection of chunks
     period-in-ticks: 0
