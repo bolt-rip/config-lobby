@@ -13,6 +13,10 @@ RUN chmod og-rwx ~/.ssh/id_rsa_map_lobby
 RUN apk upgrade --no-cache \
     && apk add --no-cache git openssh-client curl
 
+RUN curl https://github.com/itzg/mc-server-runner/releases/download/1.4.3/mc-server-runner_1.4.3_linux_amd64.tar.gz \
+    -Lo mc-server-runner.tar.gz && tar xzf mc-server-runner.tar.gz && \
+    rm LICENSE README.md mc-server-runner.tar.gz && chmod +x mc-server-runner
+
 RUN GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_map_lobby" \
     git clone --depth=1 --branch=master git@github.com:bolt-rip/map-lobby.git world
 RUN rm -rf ./world/.git
