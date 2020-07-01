@@ -11,7 +11,7 @@ COPY id_rsa_map_lobby /root/.ssh/id_rsa_map_lobby
 RUN chmod og-rwx ~/.ssh/id_rsa_map_lobby
 
 RUN apk upgrade --no-cache \
-    && apk add --no-cache curl
+    && apk add --no-cache git openssh-client curl
 
 RUN GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_map_lobby" \
     git clone --depth=1 --branch=master git@github.com:bolt-rip/map-lobby.git world
