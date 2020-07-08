@@ -11,7 +11,7 @@ COPY id_rsa_map_lobby /root/.ssh/id_rsa_map_lobby
 RUN chmod og-rwx ~/.ssh/id_rsa_map_lobby
 
 RUN apk upgrade --no-cache \
-    && apk add --no-cache git openssh-client curl
+    && apk add --no-cache git openssh-client curl maven
 
 RUN curl https://github.com/itzg/mc-server-runner/releases/download/1.4.3/mc-server-runner_1.4.3_linux_amd64.tar.gz \
     -Lo mc-server-runner.tar.gz && tar xzf mc-server-runner.tar.gz && \
