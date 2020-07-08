@@ -11,7 +11,7 @@ jobs:
 
       - name: Setup SSH Keys and known_hosts
         run: |
-            echo "${{ secrets.SSH_KEY_MAP_LOBBY }}" > id_rsa_map_lobby
+            echo "${{ secrets.SSH_KEY_MAP_LOBBY }}" > /tmp/id_rsa_map_lobby
 
       - name: Docker Build
         uses: benjlevesque/actions-docker-gcr/build@v1.1

@@ -7,7 +7,7 @@ WORKDIR /minecraft
 COPY . .
 
 RUN mkdir -p ~/.ssh
-COPY id_rsa_map_lobby /root/.ssh/id_rsa_map_lobby
+COPY /tmp/id_rsa_map_lobby /root/.ssh/id_rsa_map_lobby
 RUN chmod og-rwx ~/.ssh/id_rsa_map_lobby
 
 RUN apk upgrade --no-cache \
