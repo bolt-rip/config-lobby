@@ -25,6 +25,8 @@ RUN GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyCheckin
     git clone --depth=1 --branch=master git@github.com:bolt-rip/map-lobby.git world
 RUN rm -rf ./world/.git
 
+RUN mvn dependency:get -DrepoUrl=https://repo.repsy.io/mvn/boltrip/public -Dartifact=rip.bolt:lobby:1.0.0-SNAPSHOT -Ddest=plugins
+
 RUN curl https://pkg.ashcon.app/sportpaper -Lo sportpaper.jar
 
 FROM adoptopenjdk/openjdk8-openj9:alpine-slim
