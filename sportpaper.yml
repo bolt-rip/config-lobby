@@ -12,6 +12,9 @@ bukkit:
   ticks-per:
     # Never save chunks
     autosave: 999999
+  worlds:
+    world:
+      generator: Lobby
 spigot:
   settings:
     # Must be changed to true for Bungee
