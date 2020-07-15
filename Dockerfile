@@ -14,15 +14,15 @@ RUN apk upgrade --no-cache \
 
 RUN curl https://github.com/itzg/mc-server-runner/releases/download/1.4.3/mc-server-runner_1.4.3_linux_amd64.tar.gz \
     -Lo mc-server-runner.tar.gz && tar xzf mc-server-runner.tar.gz && \
-    rm LICENSE* README* mc-server-runner.tar.gz && chmod +x mc-server-runner && mv bin/mc-server-runner
+    rm LICENSE* README* mc-server-runner.tar.gz && chmod +x mc-server-runner && mv mc-server-runner bin/mc-server-runner
 
 RUN curl https://github.com/itzg/mc-monitor/releases/download/0.6.0/mc-monitor_0.6.0_linux_amd64.tar.gz \
     -Lo mc-monitor.tar.gz && tar xzf mc-monitor.tar.gz && \
-    rm LICENSE* README* mc-monitor.tar.gz && chmod +x mc-monitor && mv bin/mc-monitor
+    rm LICENSE* README* mc-monitor.tar.gz && chmod +x mc-monitor && mv mc-monitor bin/mc-monitor
 
 RUN curl https://github.com/itzg/rcon-cli/releases/download/1.4.8/rcon-cli_1.4.8_linux_amd64.tar.gz \
     -Lo rcon-cli.tar.gz && tar xzf rcon-cli.tar.gz && \
-    rm LICENSE* README* rcon-cli.tar.gz && chmod +x rcon-cli && mv bin/rcon-cli
+    rm LICENSE* README* rcon-cli.tar.gz && chmod +x rcon-cli && mv rcon-cli bin/rcon-cli
 
 RUN GIT_SSH_COMMAND="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa_map_lobby" \
     git clone --depth=1 --branch=master git@github.com:bolt-rip/map-lobby.git world
